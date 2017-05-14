@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather Site</title>
+        
+        <link rel="icon" type="sun.ico" href="sun.ico"> 
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <link rel="stylesheet" src="style.css">
+    </head>
+    <body>
+       <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <div>
+        <nav class = "navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class = "navbar-header">
+                    <a class="navbar-brand " href="#">Weather Site</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left" onsubmit="return zipcode()">
+                      <div class="form-group">
+                        <input id="userinput" type="text" class="form-control" placeholder="Enter ZipCode">
+                      </div>
+                      <input type="submit" class="btn btn-default" value="Submit">
+                    </form>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div>
+           <table>
+                <tr>
+                    <td><h3 id="day-1"></h3></td>
+                    <td><h3 id="day-2"></h3></td>
+                    <td><h3 id="day-3"></h3></td>
+                    <td><h3 id="day-4"></h3></td>
+                    <td><h3 id="day-5"></h3></td>
+                    <td><h3 id="day-6"></h3></td>
+                    <td><h3 id="day-7"></h3></td>
+                    <td><h3 id="day-8"></h3></td>
+                </tr>
+            </table>
+        </div>
+       
+       
+       
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script type="application/javascript" src="script.js"></script>
+    </body>
+</html>
+
+
+
+<!--zipcode for input or state/city-->
+<!--<forecast will show current 3 day forcast-->
+<!--conditions will show current conditions-->
+<!--http://api.wunderground.com/api/fd1358c429691325/forecast/q/60016.json-->
