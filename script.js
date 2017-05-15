@@ -1,6 +1,6 @@
 //forecast default
 function defaultcity(){
-    var url = "http://api.wunderground.com/api/fd1358c429691325/forecast/q/il/chicago.json";
+    var url = "https://api.wunderground.com/api/fd1358c429691325/forecast/q/il/chicago.json";
     $.get(url, information);
     return false;
 };
@@ -8,7 +8,7 @@ function defaultcity(){
 //forcast user submit
 function zipcode(){
     var userzip = document.getElementById('userinput').value;
-    var url = "http://api.wunderground.com/api/fd1358c429691325/forecast/q/" + userzip + ".json";
+    var url = "https://api.wunderground.com/api/fd1358c429691325/forecast/q/" + userzip + ".json";
     $.get(url, information);
     conditionssubmit();
     return false;
@@ -16,7 +16,7 @@ function zipcode(){
 
 //conditions default
 function defaultconditions(){
-    var urlconditions = "http://api.wunderground.com/api/fd1358c429691325/conditions/q/il/chicago.json";
+    var urlconditions = "https://api.wunderground.com/api/fd1358c429691325/conditions/q/il/chicago.json";
     $.get(urlconditions, conditions);
     return false;
 };
@@ -25,7 +25,7 @@ function defaultconditions(){
 function conditionssubmit()
 {
     var userzip = document.getElementById('userinput').value;
-    var urlc = "http://api.wunderground.com/api/fd1358c429691325/conditions/q/" + userzip + ".json";
+    var urlc = "https://api.wunderground.com/api/fd1358c429691325/conditions/q/" + userzip + ".json";
     $.get(urlc, conditions);
     return false;
 };
