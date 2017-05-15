@@ -1,64 +1,133 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--Displays Title of site-->
         <title>Weather Site</title>
         
+        <!--Displays .ico in tab at top of page-->
         <link rel="icon" type="sun.ico" href="sun.ico"> 
         
+        <!--Calls bootstrap cdn-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         
+        <!--links css stylesheet-->
         <link rel="stylesheet" src="style.css">
     </head>
+
     <body>
+        <!--Calls jquery.cdn-->
        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
+
+        <!--Displays NavBar at the top of page-->
         <div>
-        <nav class = "navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class = "navbar-header">
-                    <a class="navbar-brand " href="#">Weather Site</a>
+            <nav class = "navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class = "navbar-header">
+                        <a class="navbar-brand " href="#">Weather Site</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form navbar-left" onsubmit="return zipcode()">
+                          <div class="form-group">
+                            <input id="userinput" type="text" class="form-control" placeholder="Enter ZipCode">
+                          </div>
+                          <input type="submit" class="btn btn-default" value="Submit">
+                        </form>
+                    </ul>
                 </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <form class="navbar-form navbar-left" onsubmit="return zipcode()">
-                      <div class="form-group">
-                        <input id="userinput" type="text" class="form-control" placeholder="Enter ZipCode">
-                      </div>
-                      <input type="submit" class="btn btn-default" value="Submit">
-                    </form>
-                </ul>
-            </div>
-        </nav>
+            </nav>
         </div>
-        <div>
-           <table>
+
+        <!--current weather jumbotron-->
+        <div class="jumbotron text-center col-lg-8 col-lg-offset-2">
+            <h1 id="conditions-jumbo"></h1>
+        </div>
+
+        <!--Current weather-->
+        <div class="table-responsive col-lg-8 col-lg-offset-2">
+           <table class="table table-bordered text-center">
+                <tr>
+                    <td><h3 id="condition-update"></h3></td>
+                </tr>
+                <tr>
+                    <td><h3 id="condition-temp"></h3></td>
+                </tr>
+                <tr>
+                    <td><img id="image-current" src=""</td>
+                </tr>
+                <tr>
+                    <td><h3 id="condition-current"></h3></td>
+                </tr>
+                <tr>
+                    <td><h3 id="condition-wind"></h3></td>
+                </tr>
+                <tr>
+                    <td><h3 id="condition-precipitation"></h3></td>
+               </tr>
+            </table>
+        </div>
+
+        <!--forcast jumbotron-->
+        <div class="jumbotron text-center col-lg-8 col-lg-offset-2">
+            <h1 id="forecast-jumbo"></h1>
+        </div
+
+        <!--Displays Forcast Information for next 3 days-->
+        <div class="table-responsive col-lg-8 col-lg-offset-2">
+           <table class="table table-bordered text-center">
+                <!--Day of the week-->
                 <tr>
                     <td><h3 id="day-1"></h3></td>
                     <td><h3 id="day-2"></h3></td>
                     <td><h3 id="day-3"></h3></td>
-                    <td><h3 id="day-4"></h3></td>
-                    <td><h3 id="day-5"></h3></td>
-                    <td><h3 id="day-6"></h3></td>
-                    <td><h3 id="day-7"></h3></td>
-                    <td><h3 id="day-8"></h3></td>
+                </tr>
+                <!--High/low temps of forcast-->
+                <tr>
+                    <td><h3 id="temp-1"></h3></td>
+                    <td><h3 id="temp-2"></h3></td>
+                    <td><h3 id="temp-3"></h3></td>
+                </tr>
+                <!--Image of forcast weather-->
+                <tr>
+                    <td><img id="image-1" src=""</td>
+                    <td><img id="image-2" src=""</td>
+                    <td><img id="image-3" src=""</td>
+                </tr>
+                <!--Condition of forcast-->
+                <tr>
+
+                    <td><h3 id="condition-1"></h3></td>
+                    <td><h3 id="condition-2"></h3></td>
+                    <td><h3 id="condition-3"></h3></td>
+                </tr>
+                <!--Forcast wind and wind direction-->
+                <tr>
+                    <td><h3 id="wind-1"></h3></td>
+                    <td><h3 id="wind-2"></h3></td>
+                    <td><h3 id="wind-3"></h3></td>
+                </tr>
+                <!--Forcast precipitation and humidity-->
+                <tr>
+                    <td><h3 id="precip-1"></h3></td>
+                    <td><h3 id="precip-2"></h3></td>
+                    <td><h3 id="precip-3"></h3></td>
                 </tr>
             </table>
         </div>
-       
-       
-       
+
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+        <!--Calls .js file-->
         <script type="application/javascript" src="script.js"></script>
+
+        <!--Calls default city (Chicago)-->
+        <script>
+            defaultcity();
+            defaultconditions();
+        </script>
     </body>
 </html>
-
-
-
-<!--zipcode for input or state/city-->
-<!--<forecast will show current 3 day forcast-->
-<!--conditions will show current conditions-->
-<!--http://api.wunderground.com/api/fd1358c429691325/forecast/q/60016.json-->
