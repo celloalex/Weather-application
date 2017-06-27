@@ -1,6 +1,8 @@
 # Weather-application
 This project was constructed using HTML, CSS, JavaScript, JQuery, Bootstrap, and an API from Weather Underground.
 
+This website can be found at https://celloalex.github.io/Weather-application/.
+
 The functionality of the site includes:
 - Allowing user to enter in zipcode and get:
     - Name of city
